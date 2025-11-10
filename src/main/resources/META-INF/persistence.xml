@@ -7,7 +7,7 @@
              version="3.0">
 
     <persistence-unit name="jpabegin" transaction-type="RESOURCE_LOCAL">
-        <class>jpabasic.reserve.domain.User</class>
+        <class>com.jpa.study.starbucks.domain.User</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
