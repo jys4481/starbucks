@@ -1,6 +1,6 @@
 package com.jpa.study.starbucks.jpastudy2.app;
 
-import com.jpa.study.starbucks.jpastudy2.User2;
+import com.jpa.study.starbucks.jpastudy2.User;
 import com.jpa.study.starbucks.jpastudy2.jpa.EMF;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -10,7 +10,7 @@ import jakarta.persistence.EntityTransaction;
  */
 public class NewUserService {
 
-    public void saveNewUser(User2 user) {
+    public void saveNewUser(User user) {
         EntityManager em = EMF.createEntityManager();
         EntityTransaction tx = em.getTransaction();
 

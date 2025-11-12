@@ -1,6 +1,6 @@
 package com.jpa.study.starbucks.jpastudy2.app;
 
-import com.jpa.study.starbucks.jpastudy2.User2;
+import com.jpa.study.starbucks.jpastudy2.User;
 import com.jpa.study.starbucks.jpastudy2.jpa.EMF;
 import jakarta.persistence.EntityManager;
 
@@ -9,10 +9,10 @@ import jakarta.persistence.EntityManager;
  */
 public class GetUserService {
 
-    public User2 getUser(String email) {
+    public User getUser(String email) {
         EntityManager em = EMF.createEntityManager();
         try {
-            User2 user = em.find(User2.class, email);
+            User user = em.find(User.class, email);
             if (user == null) {
                 throw new NoUserException();
             }

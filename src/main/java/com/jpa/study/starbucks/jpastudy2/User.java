@@ -14,19 +14,19 @@ import java.time.LocalDateTime;
  * User → User2로 하여
  * org.hibernate.DuplicateMappingException 발생을 피하도록 한다.
  */
-@Entity                 // DB테이블과 매핑 대상
+@Entity(name = "user2") // DB테이블과 매핑 대상
 @Table(name = "user")   // user 테이블과 매핑
-public class User2 {
+public class User {
     @Id     // 식별자에 대응
     private String email;   // email 컬럼과 매핑
     private String name;    // name 컬럼과 매핑
     @Column(name = "create_date")   // create_date 컬럼과 매핑
     private LocalDateTime createDate;
 
-    protected User2() {
+    protected User() {
     }
 
-    public User2(String email, String name, LocalDateTime createDate) {
+    public User(String email, String name, LocalDateTime createDate) {
         this.email = email;
         this.name = name;
         this.createDate = createDate;
