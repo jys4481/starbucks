@@ -1,6 +1,6 @@
 package com.jpa.study.starbucks.jpastudy2.main;
 
-import com.jpa.study.starbucks.jpastudy2.User2;
+import com.jpa.study.starbucks.jpastudy2.User;
 import com.jpa.study.starbucks.jpastudy2.app.*;
 import com.jpa.study.starbucks.jpastudy2.jpa.EMF;
 import jakarta.persistence.EntityExistsException;
@@ -52,7 +52,7 @@ public class Main {
 
     private static void handleNew(String line) {
         String[] v = line.substring(4).split(" ");
-        User2 u = new User2(v[0], v[1], LocalDateTime.now());
+        User u = new User(v[0], v[1], LocalDateTime.now());
         try {
             newUserService.saveNewUser(u);
             log.info("새 사용자 저장: {}", u);
@@ -64,7 +64,7 @@ public class Main {
     private static void handleGet(String line) {
         String email = line.substring(4);
         try {
-            User2 user = getUserService.getUser(email);
+            User user = getUserService.getUser(email);
             log.info("사용자 정보: {}", user);
         } catch (NoUserException e) {
             log.info("사용자가 존재하지 않음: {}", email);

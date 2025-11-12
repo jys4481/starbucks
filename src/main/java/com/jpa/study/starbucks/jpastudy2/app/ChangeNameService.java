@@ -1,6 +1,6 @@
 package com.jpa.study.starbucks.jpastudy2.app;
 
-import com.jpa.study.starbucks.jpastudy2.User2;
+import com.jpa.study.starbucks.jpastudy2.User;
 import com.jpa.study.starbucks.jpastudy2.jpa.EMF;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -15,7 +15,7 @@ public class ChangeNameService {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            User2 user = em.find(User2.class, email);
+            User user = em.find(User.class, email);
             if (user == null) {
                 throw new NoUserException();
             }
