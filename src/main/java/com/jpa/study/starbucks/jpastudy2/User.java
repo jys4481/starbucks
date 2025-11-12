@@ -10,8 +10,12 @@ import java.time.LocalDateTime;
 /**
  * Hibernate 모든 @Entity 스캔하여
  * "엔티티 이름과 매핑된 테이블"을 1:1관계로 등록하기 때문에
+ * 1.
  * com.jpa.study.starbucks.jpastudy2 경로에 있는
  * User → User2로 하여
+ * org.hibernate.DuplicateMappingException 발생을 피하도록 한다.
+ * 2.
+ * @Entity "user2" name 추가하여
  * org.hibernate.DuplicateMappingException 발생을 피하도록 한다.
  */
 @Entity(name = "user2") // DB테이블과 매핑 대상
