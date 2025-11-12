@@ -6,7 +6,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class UserGetMain {
+public class UserUpdateMain {
 
     public static void main(String[] args) {
 
@@ -20,10 +20,11 @@ public class UserGetMain {
             if (user == null) {
                 System.out.println("User 없음");
             } else {
-                System.out.printf("User 있음 : email=%s, name=%s, createDate=%s\n",
-                        user.getEmail(), user.getName(), user.getCreateDate());
+                String newName = "이름" + (System.currentTimeMillis() % 100);
+                user.changeName(newName);
             }
             transaction.commit();
+
         } catch (Exception ex) {
             ex.printStackTrace();
             transaction.rollback();
