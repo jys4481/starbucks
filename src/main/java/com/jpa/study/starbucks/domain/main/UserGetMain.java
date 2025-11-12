@@ -16,7 +16,7 @@ public class UserGetMain {
 
         try {
             transaction.begin();
-            User user = entityManager.find(User.class, "user@user.com");
+            User user = entityManager.find(User.class, "jys4481@edsk.co.kr");
             if (user == null) {
                 System.out.println("User 없음");
             } else {
