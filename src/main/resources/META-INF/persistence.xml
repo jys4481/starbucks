@@ -9,7 +9,7 @@
     <persistence-unit name="jpabegin" transaction-type="RESOURCE_LOCAL">
         <class>com.jpa.study.starbucks.domain.User</class>
         <class>com.jpa.study.starbucks.jpastudy2.User</class>
-        <class>com.jpa.study.starbucks.jpastudy3.Hotel</class>
+        <class>com.jpa.study.starbucks.jpastudy3.domain.Hotel</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
