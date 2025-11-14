@@ -1,4 +1,4 @@
-package com.jpa.study.starbucks.jpastudy3;
+package com.jpa.study.starbucks.jpastudy3.domain;
 
 import jakarta.persistence.*;
 

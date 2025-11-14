@@ -1,12 +1,9 @@
-package com.jpa.study.starbucks.jpastudy2.jpa;
+package com.jpa.study.starbucks.jpastudy3.jpa;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-/**
- * EntityManagerFactory 보조 클래스
- */
 public class EMF {
 
     private static EntityManagerFactory emf;
@@ -19,7 +16,7 @@ public class EMF {
     }
 
     /**
-     * EntityManger가 필요한 경우를 위해 생성
+     * EntityManager 생성
      */
     public static EntityManager createEntityManager() {
         return emf.createEntityManager();
@@ -31,5 +28,4 @@ public class EMF {
     public static void close() {
         emf.close();
     }
-
 }
