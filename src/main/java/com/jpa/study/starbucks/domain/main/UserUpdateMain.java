@@ -12,6 +12,7 @@ public class UserUpdateMain {
 
     public static void main(String[] args) {
 
+        /*
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabegin");
         EntityManager entityManager = emf.createEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
@@ -38,7 +39,7 @@ public class UserUpdateMain {
         }
 
         emf.close();
-
+        */
     }
 
 }

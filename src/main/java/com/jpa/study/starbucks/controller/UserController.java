@@ -4,9 +4,12 @@ import com.jpa.study.starbucks.domain.User;
 import com.jpa.study.starbucks.service.UserService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -16,22 +19,28 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    /**
-     * localhost:8080/users/getEmail url을 통한
-     * JPA user find
-     */
-    @GetMapping("/getEmail")
-    public String getUser() {
-
-        User user = userService.getUser("jys4481@edsk.co.kr");
-        String email = user.getEmail();
-
-        log.info("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-        log.info("getUser email : " + email);
-        log.info("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-
-        return email;
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    @GetMapping("/{email}")
+    public ResponseEntity<User> getUser(@PathVariable String email) {
+        return ResponseEntity.ok(userService.getUser(email));
+    }
+
+    @PostMapping
+    public ResponseEntity<User> saveUser(@RequestBody User user) {
+        userService.saverUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(user);
+    }
+
+    @PutMapping("/{email}")
+    public ResponseEntity<User> updateUser(
+            @PathVariable String email,
+            @RequestBody User user
+            ) {
+        return ResponseEntity.ok(userService.updateUser(email, user));
+    }
 
 }
