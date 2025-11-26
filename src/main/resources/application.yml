@@ -1,9 +1,21 @@
 spring:
+  # ─────────────────────────────────────
+  # 1. MySQL
+  # ─────────────────────────────────────
   datasource:
     url: jdbc:mysql://localhost:3307/jpabegin?characterEncoding=utf8
     username: jpauser
     password: jpapass
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ─────────────────────────────────────
+  # 2. Oacle
+  # ─────────────────────────────────────
+  oracle:
+    url: jdbc:oracle:thin:@localhost:1521:XEPDB1
+    username: oracle
+    password: oracle
+    driver-class-name: oracle.jdbc.OracleDriver
 
   jpa:
     hibernate:

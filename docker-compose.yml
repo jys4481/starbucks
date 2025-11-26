@@ -1,4 +1,5 @@
 services:
+  # MySQL 서비스
   mysql:
     image: mysql:8.0.42
     environment:
@@ -7,6 +8,18 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+  # Oracle 서비스
+  oracle:
+    image: container-registry.oracle.com/database/express:21.3.0-xe
+    container_name: oracle-xe
+    ports:
+      - 1521:1521
+    environment:
+      ORACLE_PWD: "0508"
+      ORACLE_RANDOM_PWD: 'false'
+    volumes:
+      - oralce_data:/opt/oracle/oradata
 
 volumes:
   mysql_data:
+  oracle_data:
