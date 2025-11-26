@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Startbucks JPA
+ * Spring Boot 구조
+ * PostMan Tool Url를 통하여
+ * select, update, insert, delete 작업 실행
+ */
 @RestController
 @RequestMapping("/users")
 @Log4j2
