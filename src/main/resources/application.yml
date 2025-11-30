@@ -13,8 +13,8 @@ spring:
   # ─────────────────────────────────────
   oracle:
     url: jdbc:oracle:thin:@localhost:1521:XEPDB1
-    username: oracle
-    password: oracle
+    username: localuser
+    password: localuser
     driver-class-name: oracle.jdbc.OracleDriver
 
   jpa:

@@ -18,7 +18,7 @@ services:
       ORACLE_PWD: "0508"
       ORACLE_RANDOM_PWD: 'false'
     volumes:
-      - oralce_data:/opt/oracle/oradata
+      - oracle_data:/opt/oracle/oradata
 
 volumes:
   mysql_data:
