@@ -23,7 +23,7 @@ public class Exhibition {
     private LocalDateTime endDate;
     @Column(name = "register_datetime", insertable = false, updatable = false)
     private LocalDateTime registerDatetime;
-    @Column(name ="modified_datetime", insertable = false, updatable = false)
+    @Column(name = "modified_datetime", insertable = false, updatable = false)
     private LocalDateTime modifiedDatetime;
 
 }

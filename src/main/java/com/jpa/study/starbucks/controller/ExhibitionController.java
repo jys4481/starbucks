@@ -3,6 +3,8 @@ package com.jpa.study.starbucks.controller;
 import com.jpa.study.starbucks.domain.Exhibition;
 import com.jpa.study.starbucks.domain.Visitor;
 import com.jpa.study.starbucks.service.ExhibitionService;
+import com.jpa.study.starbucks.service.ExhibitionVisitorService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,12 +19,13 @@ import java.util.List;
  * CRUD
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/exhibitions")
 @Log4j2
 public class ExhibitionController {
 
-    @Autowired
-    ExhibitionService exhibitionService;
+    private final ExhibitionService exhibitionService;
+    private final ExhibitionVisitorService exhibitionVisitorService;
 
     @GetMapping
     public ResponseEntity<List<Exhibition>> getAllExhibitions() {
@@ -53,6 +56,12 @@ public class ExhibitionController {
         return ResponseEntity.noContent().build();
     }
 
-
+    @PostMapping("/{exhibitionId}/visitor/{visitorId}")
+    public ResponseEntity<?> saveExhibitionVisitor(
+            @PathVariable Long exhibitionId,
+            @PathVariable String visitorId
+    ) {
+        return ResponseEntity.ok(exhibitionVisitorService.saveExhibitionVisitor(exhibitionId, visitorId));
+    }
 
 }

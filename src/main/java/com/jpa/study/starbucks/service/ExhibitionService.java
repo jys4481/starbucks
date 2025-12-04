@@ -2,6 +2,7 @@ package com.jpa.study.starbucks.service;
 
 import com.jpa.study.starbucks.domain.Exhibition;
 import com.jpa.study.starbucks.repository.ExhibitionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class ExhibitionService {
 
-    @Autowired
-    ExhibitionRepository exhibitionRepository;
+    private final ExhibitionRepository exhibitionRepository;
 
     public List<Exhibition> getAllExhibitions() {
         return exhibitionRepository.findAll();
