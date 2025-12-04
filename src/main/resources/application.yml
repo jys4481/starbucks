@@ -19,7 +19,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update   # 개발환경: update / 운영 시 validate 권장
+      ddl-auto: none   # 개발환경: update / 운영 시 validate 권장
     properties:
       hibernate:
         format_sql: true
